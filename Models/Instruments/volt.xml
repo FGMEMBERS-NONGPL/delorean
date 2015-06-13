@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>volt.ac</path>
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>controls/voltage</property>
+  <factor>-4</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.017</y-m>
+   <z-m>0.022</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+
+
+
+</PropertyList>

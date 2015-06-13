@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>speedo-220.ac</path>
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>velocities/groundspeed-kt</property>
+  <factor>-1.54</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.05</y-m>
+   <z-m>0.05</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ 
+ <animation>
+  <type>material</type>
+  <object-name>lb-light</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/headlamp</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>0</red>	
+   <green>0.8</green>	
+   <blue>0</blue>	
+  </emission>
+ </animation>
+ 
+  <animation>
+  <type>material</type>
+  <object-name>left_turn</object-name>
+  <condition>	
+   <greater-than>		
+    <property>/controls/lighting/left_turn</property>				
+    <value>0</value>	
+   </greater-than>
+  </condition>
+  <emission>
+   <red>0</red>	
+   <green>0.8</green>	
+   <blue>0</blue>	
+  </emission>
+ </animation>
+
+
+</PropertyList>

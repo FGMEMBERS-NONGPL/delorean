@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>rpm.ac</path>
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>engines/engine/rpm</property>
+  <factor>-0.032</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.05</y-m>
+   <z-m>0.05</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>light</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/highlamp</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>0</red>	
+   <green>0</green>	
+   <blue>0.8</blue>	
+  </emission>
+ </animation>
+ 
+  <animation>
+  <type>material</type>
+  <object-name>right</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/right_turn</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>0</red>	
+   <green>0.8</green>	
+   <blue>0</blue>	
+  </emission>
+ </animation>
+
+
+</PropertyList>

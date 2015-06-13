@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>speed.ac</path>
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>velocities/groundspeed-kt</property>
+  <factor>-4</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.05</y-m>
+   <z-m>0.05</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ 
+ <animation>
+  <type>material</type>
+  <object-name>light</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/headlight</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>0</red>	
+   <green>0.5</green>	
+   <blue>0</blue>	
+  </emission>
+ </animation>
+ 
+  <animation>
+  <type>material</type>
+  <object-name>left</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/left-turn</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>0</red>	
+   <green>0.5</green>	
+   <blue>0</blue>	
+  </emission>
+ </animation>
+
+
+</PropertyList>

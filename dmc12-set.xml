@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+
+ <sim>
+
+  <description>DeLorean DMC-12</description>
+  <author>Alral</author>
+  <status>Pre-release</status>
+  <flight-model>yasim</flight-model>
+  <aero>dmc12-yasim</aero>
+
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/delorean/dmc12-sound.xml</path>
+  </sound>
+
+  <model>
+   <path>Aircraft/delorean/Models/delorean.xml</path>
+   <crew>
+     <pilot>
+       <visible type="int">1</visible>
+     </pilot>
+   </crew>
+		<livery>
+     <file/>
+		 <name/>
+		 <texture/>
+		 <texture-roof/>
+		</livery>
+  </model> 
+  
+ 
+
+		<startup>
+			<splash-texture>Aircraft/delorean/splash.png</splash-texture>
+		</startup>
+
+		
+
+	<!--<walker>
+		<outside type="bool">false</outside>
+		<walking type="bool">false</walking>
+		<speed type="double">0.000006</speed>
+		<latitude-deg type="double">0.0</latitude-deg>
+		<longitude-deg type="double">0.0</longitude-deg>
+		<altitude-ft type="double">0.0</altitude-ft>
+		<heading-deg type="double">0.0</heading-deg>
+		<pitch-deg type="double">0.0</pitch-deg>
+		<roll-deg type="double">0.0</roll-deg>
+	</walker>-->
+  <chase-distance-m type="double" archive="y">-14.0</chase-distance-m>
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">-0.478</x-offset-m>
+    <y-offset-m archive="y" type="double">0.9</y-offset-m>
+    <z-offset-m archive="y" type="double">2.65</z-offset-m>
+    <!--<pitch-offset-deg>-15.0</pitch-offset-deg>-->
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.6</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.6</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.6</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.6</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.6</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.6</target-z-offset-m>
+   </config>
+  </view>
+
+  <!--<view n="100">
+    <name>Walk View</name>
+    <type>lookfrom</type>
+    <config>
+      <eye-lat-deg-path>sim/walker/latitude-deg</eye-lat-deg-path>
+      <eye-lon-deg-path>sim/walker/longitude-deg</eye-lon-deg-path>
+      <eye-alt-ft-path>sim/walker/altitude-ft</eye-alt-ft-path>
+      <eye-heading-deg-path>sim/walker/heading-deg</eye-heading-deg-path>
+      <eye-roll-deg-path>sim/walker/roll-deg</eye-roll-deg-path>
+      <eye-pitch-deg-path>sim/walker/pitch-deg</eye-pitch-deg-path>
+
+
+      <ground-level-nearplane-m type="double">10.0</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+
+     <x-offset-m archive="y" type="double">0.35</x-offset-m>
+     <y-offset-m archive="y" type="double">1.5</y-offset-m>
+     <z-offset-m archive="y" type="double">1.8</z-offset-m>
+
+    </config>
+  </view>-->
+
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+
+  <help>
+    <key>
+      <name>Home</name>
+      <desc>Shift up</desc>
+    </key>
+    <key>
+      <name>End</name>
+      <desc>Shift down</desc>
+    </key>
+	<key>
+	 <name>Backspace</name>
+	 <desc>Clutch</desc>
+	</key>
+	<key>
+	  <name>b/B</name>
+	  <desc>Brake/Parking brake</desc>
+	 </key>
+    <key>
+      <name>k/K</name>
+      <desc>Switch low beam headlight</desc>
+    </key>
+    <key>
+      <name>l/L</name>
+      <desc>Switch high beam headlight (currently doesn't differ from low beam)</desc>
+    </key>
+    <key>
+	 <name>s</name>
+	 <desc>Turn key clockwise (i.e. first time to switch on battery and again to run engine)</desc>
+    </key>
+    <key>
+	 <name>w</name>
+	 <desc>Turn key counter-clockwise (switch off battery/engine)</desc>
+    </key>
+	<key>
+      <name>a/z</name>
+      <desc>Switch on right/left turn lights (like with lever on the real car you press right to turn off left, and vice versa) </desc>
+    </key>
+	<key>
+      <name>m/M</name>
+      <desc>Switch on hazard lights</desc>
+    </key>
+	<key>
+	  <name>G/g</name>
+	  <desc>Lock/unlock tow</desc>
+	 </key>
+	<key>
+	  <name>h</name>
+	  <desc>Horn</desc>
+	 </key>
+	<text>
+Thanks for choosing Alral's DeLorean DMC-12 for a ride!
+Some notes about car usage:
+The car controlling system differs slightly from the Jeep in my modification, and it differs more from other FG cars I know.
+For startup turn the key (s) once to switch on battery and again to start the engine (so you have to press "s" twice).
+Control the steering by ailerons and throttle by elevator.
+To switch off just press "w" once, which corresponds to turning the key ccw - everything like in the real car.
+Watch out - you will not be able to start the engine unless you have neutral (0) gear enabled or at least have pressed clutch (backspace).
+To change gears press clutch (backspace) and "home/end" for gear up/down.
+To start moving enable the first/reverse gear, on the first gear the needed rpm will be held as long as you keep enough throttle (primitive automatic clutch work imitation), you just have to add more throttle.
+When you reach enough speed to maintain 1500 rpm, you're on your own to watch your throttle and rpm.
+The engine stops when rpm falls below 800, so be careful with this.
+The most efficient rpm is about 3000, above and below this value power will fall. So if you are driving on low rpm and feel the need for power, you may like to shift down.
+If you want to save fuel, you may ride without power, but don't forget to press clutch or switch to N gear. Otherwise, if you just throttle down, the engine will start slowing you down.
+Re-starting engine by putting lower gear is possible (so is start-up when rolling or being towed).
+You must watch the oil temperature - during casual driving that must not be a trouble, but when driving with high rpms and low speeds, you may overheat.
+If the engine overheats, it simply stops and you may restart it when it cools down a bit (no critical failures simulated now).
+You also must warm up the engine a bit before moving when the weather is cold (below zero celcius). Otherwise it will stop when you try to increase rpm.
+Engine temperature is not really realistically simulated, but for now it is as it is. Just watch the temperature dial. Everything in the white zone is OK.
+Electrical systems are also not simulated. It means that you may switch on lights whenever you want. Instruments are constantly lit. In the future it will be improved.
+That's all about the controls. Any feedback is appreciated.</text>
+	
+</help>
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>DeLorian DMC-12</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Left door open/close</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/dlchange</property>
+							<value>1</value>
+						</binding>
+					</item>
+					<item>
+						<label>Right door open/close</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/drchange</property>
+							<value>1</value>
+						</binding>
+					</item>
+
+		 </menu>
+
+		</default>
+	</menubar>
+	<multiplay>
+	 <generic>
+	  <int n="1" alias="/controls/door-left"/> <!--left door--> 
+	  <int n="2" alias="/controls/door-right"/> <!--right door--> 
+	  <int n="3" alias="/controls/lighting/left_turn"/> <!--turn left--> 
+	  <int n="4" alias="/controls/lighting/right_turn"/> <!--turn_right--> 
+	  <float n="5" alias="/controls/gear/brake-left"/> <!--brake--> 
+	  <int n="6" alias="/controls/lighting/headlamp"/> <!--lamp-->
+	  <float n="7" alias="/controls/lighting/rev-gear"/> <!--hb lamp-->
+	  <int n="8" alias="/engines/engine/running"/> <!--engine-->
+	  <int n="9" alias="/controls/horn/horn"/> <!--horn-->
+	  <float n="10" alias="/gear/gear[0]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="11" alias="/gear/gear[1]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="12" alias="/gear/gear[2]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="13" alias="/gear/gear[3]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="14" alias="/controls/flight/aileron"/> <!--wheel steering-->
+	  <float n="15" alias="/engines/engine/rpm"/> <!--rpm-->
+	 </generic>
+	</multiplay>
+ </sim>
+ 
+ <!--ENGINES-->
+ <engines>
+  <engine>
+   <rpm type="float">0</rpm>
+   <throttle type="float">0</throttle>
+   <rev_throttle type="float">0</rev_throttle>
+   <gear type="int">0</gear>
+   <startup type="int">0</startup>
+   <running type="int">0</running>
+   <clutch type="int">0</clutch>
+   <oiltemp-ind type="float">0</oiltemp-ind>
+   <oil-temperature-degf type="float">-999</oil-temperature-degf>
+   <smoke type="float">0</smoke>
+   <reheat-smoke type="int">0</reheat-smoke>
+  </engine>
+ </engines>
+ 
+ <!--CONTROLS-->
+ <controls>
+  <!--aerotow-->
+  <aerotow>
+   <find-aircraft type="bool">false</find-aircraft>
+  </aerotow>
+  <!--engines-->
+  <engines>
+   <engine n="0">
+    <magnetos>3</magnetos>
+   </engine>
+  </engines>
+  
+  <!--gear-->
+  <gear>
+   <brake-parking type="bool">true</brake-parking>
+   <engine-brake type="float">0</engine-brake>
+  </gear>
+  
+  <door-left type="int">0</door-left>
+  <door-right type="int">0</door-right>
+  <dlchange type="int">0</dlchange>
+  <drchange type="int">0</drchange>
+  <gearchange type="int">0</gearchange>
+  <gearstick-x type="int">0</gearstick-x>
+  <gearstick-y type="int">0</gearstick-y>
+  <keyturn type="int">0</keyturn>
+  <live type="int">0</live>
+  <voltage type="int">0</voltage>
+
+  <!--lighting-->
+  <lighting>
+   <turn type="int">0</turn>
+   <headlamp type="int">0</headlamp>
+   <highlamp type="int">0</highlamp>
+   <alarm type="bool">false</alarm>
+   <right_turn type="int">0</right_turn>
+   <left_turn type="int">0</left_turn>
+   <headlamp type="bool">false</headlamp>
+   <rev-gear type="int">0</rev-gear>
+  </lighting>
+  
+
+  <!--horn-->
+	<horn>
+	 <horn type="int">0</horn>
+	</horn>
+
+ </controls>
+ 
+ <!-- INPUT -->
+
+<input>
+	<keyboard>
+
+	  <!--shift up/down-->
+        <key n="362"> 
+         <name>Home</name>
+         <desc>Shift Up</desc>
+         <binding>
+          <command>property-adjust</command>
+          <property>/engines/engine/gear</property>
+          <step type="double">1</step>
+          <min type="double">-1</min>
+          <max type="double">5</max>
+	   </binding>
+        </key>
+        <key n="363"> 
+          <name>End</name>
+          <desc>Shift Down</desc>
+         <binding>
+          <command>property-adjust</command>
+          <property>/engines/engine/gear</property>
+          <step type="double">-1</step>
+          <min type="double">-1</min>
+          <max type="double">5</max>
+	   </binding>
+        </key>
+		<key n="8"> 
+         <name>Backspace</name>
+         <desc>Clutch</desc>
+         <binding>
+		  <command>property-assign</command>
+		  <property>/engines/engine/clutch</property>
+		  <value>1</value>
+	     </binding>
+		 <mod-up>
+		  <binding>
+           <command>property-assign</command>
+		   <property>/engines/engine/clutch</property>
+		   <value>0</value>
+          </binding>
+		 </mod-up>
+		</key>
+
+	  <!--starter-->
+        <key n="119"> 
+         <name>w</name>
+          <desc>Turn key ccw</desc>
+          <binding> 
+           <command>property-assign</command>
+           <property>controls/keyturn</property>
+           <value type="int">0</value>
+         </binding>
+        </key>
+        <key n="115"> 
+         <name>s</name>
+         <desc>Turn key cw</desc>
+         <binding> 
+          <command>property-adjust</command>
+          <property>controls/keyturn</property>
+          <step type="int">1</step>
+          <min type="int">0</min>
+          <max type="int">2</max>
+         </binding>
+		 <mod-up>
+          <binding> 
+           <command>property-assign</command>
+           <property>controls/keyturn</property>
+           <value type="int">1</value>
+          </binding>
+         </mod-up> 
+        </key>
+
+
+<!--turn signals-->
+      <key n="65">
+       <name>A</name>
+       <desc>Right turn signal</desc>
+       <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/turn</property>
+        <step type="double">1</step>
+        <min type="double">-1</min>
+        <max type="double">1</max>
+	 </binding>
+ 	</key>
+      <key n="97">
+       <name>a</name>
+       <desc>Right turn signal</desc>
+       <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/turn</property>
+        <step type="double">1</step>
+        <min type="double">-1</min>
+        <max type="double">1</max>
+	 </binding>
+ 	</key>
+      <key n="360">
+       <name>PageUp</name>
+       <desc>Right turn signal</desc>
+       <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/turn</property>
+        <step type="double">1</step>
+        <min type="double">-1</min>
+        <max type="double">1</max>
+	 </binding>
+ 	</key>
+
+
+      <key n="90">
+       <name>Z</name>
+       <desc>Left turn signal</desc>
+       <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/turn</property>
+        <step type="double">-1</step>
+        <min type="double">-1</min>
+        <max type="double">1</max>
+	 </binding>
+ 	</key> 
+      <key n="122">
+       <name>z</name>
+       <desc>Left turn signal</desc>
+       <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/turn</property>
+        <step type="double">-1</step>
+        <min type="double">-1</min>
+        <max type="double">1</max>
+	 </binding>
+ 	</key> 
+      <key n="361">
+       <name>PageDown</name>
+       <desc>Left turn signal</desc>
+       <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/turn</property>
+        <step type="double">-1</step>
+        <min type="double">-1</min>
+        <max type="double">1</max>
+	 </binding>
+ 	</key> 
+
+
+<!--headlight on-->
+      <key n="107">
+       <name>k</name>
+       <desc>Headlight</desc>
+  	 <binding>
+ 	  <command>property-assign</command>
+ 	  <property>/controls/lighting/headlamp</property>
+	  <value type="int">1</value>
+	  </binding>
+ 	</key> 
+
+      <key n="75">
+       <name>K</name>
+       <desc>Headlight</desc>
+  	 <binding>
+ 	  <command>property-assign</command>
+ 	  <property>/controls/lighting/headlamp</property>
+	  <value type="int">0</value>
+	  </binding>
+ 	</key> 
+	
+	<key n="108">
+ 	 <name>l</name>
+ 	 <desc>Switch on high beam light</desc>
+  	 <binding>
+ 	  <command>property-assign</command>
+ 	  <property>/controls/lighting/highlamp</property>
+	  <value type="int">1</value>
+	  </binding>
+	 </key>
+ 	<key n="76">
+ 	 <name>L</name>
+ 	 <desc>Switch off high beal light</desc>
+  	 <binding>
+ 	  <command>property-assign</command>
+ 	  <property>/controls/lighting/highlamp</property>
+	  <value type="int">0</value>
+	  </binding>
+	 </key>
+
+<!--alarm light-->
+      <key n="77">
+       <name>M</name>
+       <desc>Hazard</desc>
+       <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/alarm</property>
+	 </binding>
+ 	</key> 
+
+      <key n="109">
+       <name>m</name>
+       <desc>Hazard</desc>
+       <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/alarm</property>
+	 </binding>
+ 	</key> 
+
+	<!--horn-->
+        <key n="104"> 
+          <name>h</name>
+          <desc>Horn</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/horn</property>
+            <value type="int">1</value>
+          </binding>
+	    <mod-up>
+           <binding> 
+            <command>property-assign</command>
+            <property>controls/horn</property>
+            <value type="int">0</value>
+          </binding>
+	    </mod-up>
+        </key>
+
+      <key n="71">
+       <name>G</name>
+		<binding>
+			<command>property-assign</command>
+			<property>/controls/aerotow/find-aircraft</property>
+			<value type="bool">true</value>
+		</binding>
+		<mod-up>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/aerotow/find-aircraft</property>
+				<value type="bool">false</value>
+			</binding>
+		</mod-up>
+ 	</key>
+
+      <key n="103">
+       <name>g</name>
+       <desc>Unlock tow</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/hitches/aerotow/open</property>
+					<value type="bool">true</value>
+				</binding>
+ 	</key>
+
+	</keyboard>
+</input>
+
+<!-- -NASAL- -->
+ <nasal>
+
+  <dmc12>
+   <file>Aircraft/delorean/Nasal/dmc12.nas</file>
+  </dmc12>
+
+  <rain>
+   <file>Aircraft/delorean/Nasal/rain.nas</file>
+  </rain>
+ </nasal>
+</PropertyList>
+
+
+
+

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>right-ind.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>brake</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/gear/brake-parking</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>0.8</red>	
+   <green>0</green>	
+   <blue>0</blue>	
+  </emission>
+</animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>nofuel</object-name>
+  <condition>	
+   <less-than>		
+    <property>/consumables/fuel/tank[0]/level-norm</property>				
+    <value>0.25</value>	
+   </less-than>
+  </condition>
+  <emission>
+   <red>0.8</red>	
+   <green>0</green>	
+   <blue>0</blue>	
+  </emission>
+</animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>acu</object-name>
+  <condition>	
+   <and>
+    <equals>		
+     <property>/controls/live</property>				
+     <value>1</value>	
+    </equals>
+    <equals>		
+     <property>/engines/engine/running</property>				
+     <value>0</value>	
+    </equals>
+   </and>
+  </condition>
+  <emission>
+   <red>0.8</red>	
+   <green>0</green>	
+   <blue>0</blue>	
+  </emission>
+</animation>
+ 
+
+
+
+</PropertyList>

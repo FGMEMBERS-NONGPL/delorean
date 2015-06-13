@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>temp.ac</path>
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>engines/engine/oiltemp-ind</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.016</y-m>
+   <z-m>0.018</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+
+
+
+</PropertyList>

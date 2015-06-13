@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+
+ <fx>
+  <crank>
+   <name>cough</name>
+   <path>Sounds/coughing.wav</path>
+   <property>/engines/engine/running</property>
+   <volume>
+   </volume>
+  </crank>
+
+  <horn>
+   <name>horn</name>
+   <mode>looped</mode>
+   <path>Sounds/horn.wav</path>
+   <property>/controls/horn/horn</property>
+   <volume>
+    <property>/orientation/alpha-deg</property>
+    <type>log</type>
+    <min>1.0</min>
+    <max>1.5</max>
+   </volume>
+   <volume>
+    <property>/sim/current-view/internal</property>
+    <offset>1.0</offset>
+    <factor>0.0</factor>
+   </volume>
+  </horn>
+
+
+  <engine>
+   <name>engine</name>
+   <mode>looped</mode>
+   <path>Sounds/engine.wav</path>
+   <property>/engines/engine/running</property>
+   <!--<volume>
+    <property>/engines/engine/mp-osi</property>
+    <factor>0.00375</factor>
+    <min>0.15</min>
+    <max>0.5</max>
+   </volume>-->
+   <volume>
+    <property>/orientation/alpha-deg</property>
+    <type>log</type>
+    <min>2.0</min>
+    <max>2.5</max>
+   </volume>
+   <!--<condition>
+    <greater-than>
+     <property>/engines/engine/rpm</property>
+     <value>2000</value>
+    </greater-than>
+   </condition>-->
+   <pitch>
+    <property>/engines/engine/rpm</property>
+    <factor>0.00025</factor>
+    <offset>0.5</offset>
+   </pitch>
+   <!--<volume>
+    <property>/controls/flight/elevator</property>
+    <offset>0.15</offset>
+   </volume>-->
+  </engine>
+
+  <rumble>
+   <name>rumble</name>
+   <mode>looped</mode>
+   <path>Sounds/rumble.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+    <!-- <property>/sim/current-view/internal</property> -->
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <type>log</type>
+    <factor>0.25</factor>
+   </volume>
+  </rumble>
+
+
+  <squeal>
+   <name>squeal</name>
+   <path>Sounds/squeal.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.5</factor>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>1.2</offset>
+   </pitch>
+  </squeal>
+ 
+
+
+
+
+
+  <door-shut-left>
+   <name>door-shut-left</name>
+   <path>Sounds/door-shut.wav</path>
+   <condition>
+	<equals>
+      <property>/controls/door-left</property>
+	  <value>0</value>
+	 </equals>
+   </condition>
+  </door-shut-left>
+  
+    <door-shut-right>
+   <name>door-shut-right</name>
+   <path>Sounds/door-shut.wav</path>
+   <condition>
+	<equals>
+      <property>/controls/door-right</property>
+	  <value>0</value>
+	 </equals>
+   </condition>
+  </door-shut-right>
+  
+  
+
+
+</fx>
+ 
+</PropertyList>

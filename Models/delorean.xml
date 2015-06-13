@@ -1,0 +1,440 @@
+<PropertyList>
+ <path>dmc12.ac</path>
+
+	<offsets>
+		<z-m>-0.03</z-m>
+	</offsets>
+
+
+  <nasal>
+    <load>
+	var self = cmdarg();
+	self.getNode("controls/door-left", 1).alias(self.getNode("sim/multiplay/generic/int[1]"));
+	self.getNode("controls/door-right", 1).alias(self.getNode("sim/multiplay/generic/int[2]"));
+	self.getNode("controls/lighting/left_turn", 1).alias(self.getNode("sim/multiplay/generic/int[3]"));
+	self.getNode("controls/lighting/right_turn", 1).alias(self.getNode("sim/multiplay/generic/int[4]"));
+	self.getNode("controls/gear/brake-left", 1).alias(self.getNode("sim/multiplay/generic/float[5]"));
+	self.getNode("controls/lighting/headlamp", 1).alias(self.getNode("sim/multiplay/generic/int[6]"));
+	self.getNode("controls/lighting/rev-gear", 1).alias(self.getNode("sim/multiplay/generic/int[7]"));
+	self.getNode("engines/engine/running", 1).alias(self.getNode("sim/multiplay/generic/int[8]"));
+	self.getNode("controls/horn/horn", 1).alias(self.getNode("sim/multiplay/generic/int[9]"));
+	self.getNode("gear/gear[0]/rollspeed-ms", 1).alias(self.getNode("sim/multiplay/generic/float[10]"));
+	self.getNode("gear/gear[1]/rollspeed-ms", 1).alias(self.getNode("sim/multiplay/generic/float[11]"));
+	self.getNode("gear/gear[2]/rollspeed-ms", 1).alias(self.getNode("sim/multiplay/generic/float[12]"));
+	self.getNode("gear/gear[3]/rollspeed-ms", 1).alias(self.getNode("sim/multiplay/generic/float[13]"));
+	self.getNode("controls/flight/aileron", 1).alias(self.getNode("sim/multiplay/generic/float[14]"));
+	self.getNode("engines/engine/rpm", 1).alias(self.getNode("sim/multiplay/generic/float[15]"));
+	
+    </load>
+    <unload>
+			print ("bye");
+			##loopid += 1;
+    </unload>
+  </nasal>
+
+ <sound><path>Aircraft/delorean/mp-sound.xml</path></sound>
+ 
+ <!--effects-->
+ 
+    <effect>
+        <inherits-from>Aircraft/delorean/Models/Effects/skin-reflect</inherits-from>
+		<object-name>hull</object-name>
+	</effect>
+     <model>
+        <path>Aircraft/delorean/Models/Effects/exhaust.xml</path>
+        <name>exhaust</name>
+		<condition>
+         <equals>
+          <property>engines/engine/running</property>
+          <value>1</value>
+         </equals>
+        </condition>
+        <offsets>
+            <x-m>4.2</x-m>
+            <y-m>0.6</y-m>
+            <z-m>0.4</z-m>
+        </offsets>
+    </model>
+	 <model>
+        <path>Aircraft/delorean/Models/Effects/exhaust.xml</path>
+        <name>exhaust</name>  
+		<condition>
+         <equals>
+          <property>engines/engine/running</property>
+          <value>1</value>
+         </equals>
+        </condition>
+        <offsets>
+            <x-m>4.2</x-m>
+            <y-m>-0.6</y-m>
+            <z-m>0.4</z-m>
+        </offsets>
+    </model>
+	 <model>
+        <path>Aircraft/delorean/Models/Effects/reheat.xml</path>
+        <name>reheat</name> 
+		<condition>
+	     <equals>
+          <property>engines/engine/reheat-smoke</property>
+          <value>1</value>
+         </equals>
+		</condition>
+        <offsets>
+            <x-m>3.5</x-m>
+            <y-m>0</y-m>
+            <z-m>0.5</z-m>
+        </offsets>
+    </model>
+
+
+ <!-- Submodels-->
+  <!--Doors-->
+ 	<model> 
+      <path>Submodels/door-left.xml</path>
+      <offsets> 
+        <x-m>2.175</x-m>
+        <y-m>-0.2</y-m>
+        <z-m>1.186</z-m>
+      </offsets>
+    </model>
+ 	<model> 
+      <path>Submodels/door-right.xml</path>
+      <offsets> 
+        <x-m>2.175</x-m>
+        <y-m>0.2</y-m>
+        <z-m>1.186</z-m>
+      </offsets>
+    </model>
+	<!--Wheels
+ 	<model> 
+      <path>Submodels/fwheel.xml</path>
+      <offsets> 
+        <x-m>0.815</x-m>
+        <y-m>-0.796</y-m>
+        <z-m>0.3</z-m>
+      </offsets>
+    </model>
+ 	<model> 
+      <path>Submodels/fwheel.xml</path>
+      <offsets> 
+        <x-m>0.815</x-m>
+        <y-m>0.796</y-m>
+        <z-m>0.3</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Submodels/rwheel.xml</path>
+      <offsets> 
+        <x-m>3.36</x-m>
+        <y-m>-0.796</y-m>
+        <z-m>0.3</z-m>
+      </offsets>
+    </model>
+ 	<model> 
+      <path>Submodels/rwheel.xml</path>
+      <offsets> 
+        <x-m>3.36</x-m>
+        <y-m>0.796</y-m>
+        <z-m>0.3</z-m>
+      </offsets>
+    </model>-->
+	<!--controls-->
+ 	<model> 
+      <path>Submodels/steerwheel.xml</path>
+      <offsets> 
+        <x-m>1.85</x-m>
+        <y-m>-0.526</y-m>
+        <z-m>0.693</z-m>
+      </offsets>
+    </model>
+ 	<model> 
+      <path>Submodels/gearbox.xml</path>
+      <offsets> 
+        <x-m>1.952</x-m>
+        <y-m>0</y-m>
+        <z-m>0.466</z-m>
+      </offsets>
+    </model>
+	
+
+<!-- instruments -->
+	<model> 
+      <path>Instruments/left-ind.xml</path>
+      <offsets> 
+        <x-m>1.666</x-m>
+        <y-m>-0.7</y-m>
+        <z-m>0.732</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Instruments/temp.xml</path>
+      <offsets> 
+        <x-m>1.666</x-m>
+        <y-m>-0.6</y-m>
+        <z-m>0.732</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Instruments/volt.xml</path>
+      <offsets> 
+        <x-m>1.666</x-m>
+        <y-m>-0.6</y-m>
+        <z-m>0.782</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Instruments/speedo-220.xml</path>
+      <offsets> 
+        <x-m>1.666</x-m>
+        <y-m>-0.5</y-m>
+        <z-m>0.732</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Instruments/rpm.xml</path>
+      <offsets> 
+        <x-m>1.666</x-m>
+        <y-m>-0.4</y-m>
+        <z-m>0.732</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Instruments/fuel.xml</path>
+      <offsets> 
+        <x-m>1.67</x-m>
+        <y-m>-0.35</y-m>
+        <z-m>0.732</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Instruments/oil.xml</path>
+      <offsets> 
+        <x-m>1.666</x-m>
+        <y-m>-0.35</y-m>
+        <z-m>0.782</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Instruments/right-ind.xml</path>
+      <offsets> 
+        <x-m>1.666</x-m>
+        <y-m>-0.35</y-m>
+        <z-m>0.732</z-m>
+      </offsets>
+    </model>
+	
+	
+<!--Animations-->
+
+ <!--handbrake-->
+ <animation>
+  <object-name>21</object-name>
+  <type>rotate</type>
+  <property>controls/gear/brake-parking</property>
+  <factor>45</factor>
+  <offset-deg>0</offset-deg>
+  <center>
+   <x-m>2.09</x-m>
+   <y-m>-0.785</y-m>
+   <z-m>0.37</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+ <!--wheels-->
+ <animation>
+  <object-name>22</object-name>
+  <object-name>25</object-name>
+  <type>rotate</type>
+  <property>controls/flight/aileron</property>
+  <factor>-45</factor>
+  <offset-deg>0</offset-deg>
+  <center>
+   <x-m>0.815</x-m>
+   <y-m>0.796</y-m>
+   <z-m>0.3</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <object-name>23</object-name>
+  <object-name>24</object-name>
+  <type>rotate</type>
+  <property>controls/flight/aileron</property>
+  <factor>-45</factor>
+  <offset-deg>0</offset-deg>
+  <center>
+   <x-m>0.815</x-m>
+   <y-m>-0.796</y-m>
+   <z-m>0.3</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>spin</type>
+  <object-name>22</object-name>
+  <object-name>23</object-name>
+  <object-name>24</object-name>
+  <object-name>25</object-name>
+  <property>gear/gear[0]/rollspeed-ms</property>
+  <factor>-12</factor>
+  <center>
+   <x-m>0.815</x-m>
+   <y-m>0</y-m>
+   <z-m>0.273</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+  <animation>
+  <type>spin</type>
+  <object-name>26</object-name>
+  <object-name>27</object-name>
+  <property>gear/gear[2]/rollspeed-ms</property>
+  <factor>-12</factor>
+  <center>
+   <x-m>3.36</x-m>
+   <y-m>0</y-m>
+   <z-m>0.273</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <!--Lights-->
+
+  <animation>
+  <type>material</type>
+  <object-name>4</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/headlamp</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>1</red>	
+   <green>1</green>	
+   <blue>0.7</blue>	
+  </emission>
+</animation>
+
+  <animation>
+  <type>material</type>
+  <object-name>5</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/highlamp</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>1</red>	
+   <green>1</green>	
+   <blue>0.7</blue>	
+  </emission>
+</animation>
+
+  <animation>
+  <type>material</type>
+  <object-name>7</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/right_turn</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>1</red>	
+   <green>0.6</green>	
+   <blue>0.0</blue>	
+  </emission>
+</animation>
+
+  <animation>
+  <type>material</type>
+  <object-name>8</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/left_turn</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>1</red>	
+   <green>0.6</green>	
+   <blue>0.0</blue>	
+  </emission>
+</animation>
+
+  <animation>
+  <type>material</type>
+  <object-name>9</object-name>
+  <condition>	
+   <equals>		
+    <property>/gear/gear/has-brake</property>				
+    <value>true</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>1</red>	
+   <green>0.0</green>	
+   <blue>0.0</blue>	
+  </emission>
+</animation>
+
+  <animation>
+  <type>material</type>
+  <object-name>10</object-name>
+  <condition>	
+   <equals>		
+    <property>/controls/lighting/headlamp</property>				
+    <value>1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>0.8</red>	
+   <green>0.1</green>	
+   <blue>0.1</blue>	
+  </emission>
+</animation>
+
+  <animation>
+  <type>material</type>
+  <object-name>11</object-name>
+  <condition>	
+   <equals>		
+    <property>/engines/engine/gear</property>				
+    <value>-1</value>	
+   </equals>
+  </condition>
+  <emission>
+   <red>1</red>	
+   <green>1</green>	
+   <blue>0.8</blue>	
+  </emission>
+</animation>
+
+</PropertyList>
+ 

@@ -1,0 +1,92 @@
+<airplane mass="2712">
+
+<!--<approach speed="45" aoa="6" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.0"/>
+</approach>
+
+<cruise speed="45" alt="25000" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/boost" value="1.0"/>
+</cruise>-->
+
+
+
+<fuselage ax="0.0"  ay="0" az="0.6" bx="-4" by="0" bz="0.8" midpoint="0.7" 
+width="0.6" taper="0" cx="2.5" cz="2.5"/>
+
+<!--<wing x="-1.50" y="0.0" z="0.6" taper="1.0" camber="0"
+      length="0.7" chord="1.0" >
+</wing>
+<mstab x="-3.4" y="0.2" z="0.7" length="1.8" chord="1.2" >
+
+</mstab>-->
+
+<thruster 
+  x="-3.4" y="0.7" z="0"
+  thrust="350"
+  vx="1" vy="0" vz="0">
+  <control-input axis="/engines/engine/throttle" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="1"/>
+</thruster>
+<thruster 
+  x="-3.4" y="-0.7" z="0"
+  thrust="350"
+  vx="1" vy="0" vz="0">
+  <control-input axis="/engines/engine/throttle" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="1"/>
+</thruster>
+
+<thruster 
+  x="-3.4" y="0.7" z="0"
+  thrust="350"
+  vx="-1" vy="0" vz="0">
+  <control-input axis="/engines/engine/rev_throttle" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="1"/>
+</thruster>
+<thruster 
+  x="-3.4" y="-0.7" z="0"
+  thrust="350"
+  vx="-1" vy="0" vz="0">
+  <control-input axis="/engines/engine/rev_throttle" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="1"/>
+</thruster>
+
+<tank x="-3.8" y="0" z="0.3" capacity="87"/>
+
+<gear x="-0.815" y="0.796" z="-0.5" compression="0.25" dfric="1.2"
+	spring="5" damp="2">
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+<control-input axis="/controls/flight/aileron" control="STEER" square="true"
+ src0="-1.0" src1="1.0"
+ dst0="-0.45" dst1="0.45"/>
+</gear>
+
+<gear x="-0.815" y="-0.796" z="-0.5" compression="0.25" dfric="1.2"
+	spring="5" damp="2">
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+<control-input axis="/controls/flight/aileron" control="STEER" square="true"
+ src0="-1.0" src1="1.0"
+ dst0="-0.45" dst1="0.45"/>
+</gear>
+
+<gear x="-3.36" y="0.796" z="-0.5" compression="0.25" dfric="1.2"
+	spring="5" damp="2">
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+</gear>
+
+<gear x="-3.36" y="-0.796" z="-0.5" compression="0.25" dfric="1.2"
+	spring="5" damp="2">
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+</gear>
+
+	<!--<hitch name="aerotow" x="0" y="0" z="0.3" force-is-calculated-by-other="0">
+		<tow length="15" weight-per-meter="0.035" elastic-constant="9000" break-force="100000" mp-auto-connect-period="0.0"/>
+		<winch max-tow-length="15" min-tow-length="5" initial-tow-length="15"/>
+		<control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
+	</hitch>-->
+
+
+<ballast x="-0.8" y="0" z="0.2" mass="800" />
+
+
+</airplane>

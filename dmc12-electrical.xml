@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+ 
+
+<PropertyList>
+
+  <!-- Supplier list -->
+
+  <supplier>
+    <name>Battery</name>
+    <prop>/systems/electrical/suppliers/battery</prop>
+    <kind>battery</kind>
+    <volts>12</volts> 
+    <amps>60</amps>
+  </supplier>
+
+  <supplier>
+    <name>Alternator</name>
+    <prop>/systems/electrical/suppliers/alternator</prop>
+    <kind>alternator</kind>
+    <rpm-source>/engines/engine[0]/rpm</rpm-source>
+    <volts>13</volts>
+    <amps>60</amps> 
+  </supplier>
+
+  <bus>
+    <name>Master Bus</name>
+    <prop>/systems/electrical/outputs/bus[0]</prop>
+  </bus>
+
+  <!-- Outputs -->
+
+  <output>
+    <name>Starter Feed</name>
+    <prop>/systems/electrical/outputs/starter</prop>
+  </output>
+
+  <output>
+    <name>High beam light feed</name>
+    <prop>/systems/electrical/outputs/hb-light</prop>
+  </output>
+
+  <output>
+    <name>Low beam light feed</name>
+    <prop>/systems/electrical/outputs/lb-light</prop>
+  </output>
+  
+  <output>
+    <name>Instrument light feed</name>
+    <prop>/systems/electrical/outputs/instrument-light</prop>
+  </output>
+
+
+
+  <!-- connect in power sources -->
+
+  <connector>
+    <input>Alternator</input>
+    <output>Master Bus</output>
+    <switch>
+      <prop>/engines/engine[0]/running</prop>
+    </switch>
+  </connector>
+
+  <connector>
+    <input>Battery</input>
+    <output>Master Bus</output>
+    <switch>
+      <prop>/controls/live</prop>
+    </switch>
+  </connector>
+
+  <!-- connect starter output -->
+
+  <connector>
+    <input>Master Bus</input>
+    <output>Starter feed</output>
+    <switch>
+      <prop>/engines/engine[0]/startup</prop>
+      <initial-state>off</initial-state>
+    </switch>
+  </connector>
+
+  <!-- connect master bus outputs -->
+
+  <connector>
+    <input>Master Bus</input>
+    <output>High beam light feed</output>
+    <switch>
+      <prop>/controls/lighting/highlamp</prop>
+      <initial-state>off</initial-state>
+    </switch>
+  </connector>
+
+  <connector>
+    <input>Master Bus</input>
+    <output>Low beam light feed</output>
+    <switch>
+      <prop>/controls/lighting/headlamp</prop>
+      <initial-state>off</initial-state>
+    </switch>
+  </connector>
+
+  <connector>
+    <input>Master Bus</input>
+    <output>Instrument light feed</output>
+    <switch>
+      <prop>/controls/live</prop>
+      <initial-state>off</initial-state>
+    </switch>
+  </connector>
+
+</PropertyList>

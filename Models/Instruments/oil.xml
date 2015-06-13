@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>oil.ac</path>
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>engines/engine/oil-pressure-psi</property>
+  <factor>1.5</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.031</y-m>
+   <z-m>0.022</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+
+
+
+</PropertyList>

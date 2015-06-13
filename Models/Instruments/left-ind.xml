@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+		
+
+    <path>left-ind.ac</path>
+
+
+ <animation>
+  <type>material</type>
+  <object-name>dooropen</object-name>
+  <condition>	
+   <or>
+    <greater-than>		
+     <property>/controls/door-left</property>				
+     <value>0</value>	
+    </greater-than>
+	<greater-than>		
+     <property>/controls/door-right</property>				
+     <value>0</value>	
+    </greater-than>
+   </or>
+  </condition>
+  <emission>
+   <red>0.5</red>	
+   <green>0</green>	
+   <blue>0</blue>	
+  </emission>
+</animation>
+
+
+</PropertyList>
